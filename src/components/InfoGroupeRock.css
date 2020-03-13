@@ -1,0 +1,11 @@
+h1{
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+}
+.InfoGroupeRock-text-left{
+    text-align: left;
+}
+.InfoGroupeRock-text-justify{
+    text-align: justify;
+}

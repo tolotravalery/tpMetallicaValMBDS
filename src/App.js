@@ -14,22 +14,22 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Link to="/">Home</Link>
+        {/*<Link to="/">Groupe Rock</Link>
         &nbsp;
-        <Link to="/rock">Groupe Rock</Link>
+        <Link to="/hobbies">Hobbies</Link>
         <Link to="/ui">Test Material UI</Link>
         &nbsp;
         <Link to="/photos">Photos</Link>
         &nbsp;
-        <Link to="/username">Username</Link>
-        <Route exact path="/" component={ListeHobbies}></Route>
+        <Link to="/username">Username</Link>*/}
+        <Route exact path="/" component={GroupeRock}></Route>
         <Route path="/ui" component={TestMaterialUI}></Route>
         <Route path="/photos/:id" component={Photos}></Route>
         <Route
           path="/username"
           component={() => <Username name="Michel" age="54" />}
         />
-        <Route path="/rock" component={GroupeRock} />
+        <Route path="/hobbies" component={ListeHobbies} />
       </BrowserRouter>
     </div>
   );
