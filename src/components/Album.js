@@ -111,6 +111,7 @@ const Album = ({album}) => {
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
+                className="Album-popup"
             >
                 <DialogTitle id="alert-dialog-title">{"Les chansons :"}</DialogTitle>
                 <DialogContent>
