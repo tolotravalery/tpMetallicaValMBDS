@@ -38,7 +38,7 @@ const Album = ({album}) => {
     ));
 
     return (
-        <Grid item xs={6} sm={3}>
+        <Grid item xs={6} sm={4}>
             <Card className="Album-root">
                 <CardHeader
                     avatar={
@@ -60,10 +60,42 @@ const Album = ({album}) => {
                     title={album.title}
                 />
                 <CardContent>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    {/*<Typography variant="body2" color="textSecondary" component="p">
                         This impressive paella is a perfect party dish and a fun meal to cook together with your
                         guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                    </Typography>
+                    </Typography>*/}
+                    <nav className="style-scope Album-nav">
+                        <a target="_blank" tabIndex="-1" alt="url Amazon" title="Amazon"
+                           href={album.urlAmazon}>
+                            <img draggable="false" src="/img/amazon_icon.svg"
+                                 className="Album-icon-link"  />
+                        </a>
+                        <a target="_blank" tabIndex="-1" alt="url Itunes" title="Itunes"
+                           href={album.urlITunes}>
+                            <img draggable="false" src="/img/itunes_icon.svg"
+                                 className="Album-icon-link"  />
+                        </a>
+                        <a target="_blank" tabIndex="-1" alt="url Allmusic" title="Allmusic"
+                           href={album.urlAllmusic}>
+                            <img draggable="false" src="/img/allmusic_icon.svg"
+                                 className="Album-icon-link"  />
+                        </a>
+                        <a target="_blank" tabIndex="-1" alt="url Discogs" title="Discogs"
+                           href={album.urlDiscogs}>
+                            <img draggable="false" src="/img/discogs_icon.svg"
+                                 className="Album-icon-link"  />
+                        </a>
+                        <a target="_blank" tabIndex="-1" alt="url MusicBrainz" title="MusicBrainz"
+                           href={album.urlMusicBrainz}>
+                            <img draggable="false" src="/img/musicbrainz_icon.svg"
+                                 className="Album-icon-link"  />
+                        </a>
+                        <a target="_blank" tabIndex="-1" alt="url Spotify" title="Spotify"
+                           href={album.urlSpotify}>
+                            <img draggable="false" src="/img/spotify_icon.svg"
+                                 className="Album-icon-link"  />
+                        </a>
+                    </nav>
                 </CardContent>
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
