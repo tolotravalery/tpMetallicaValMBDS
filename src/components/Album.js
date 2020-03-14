@@ -20,18 +20,22 @@ import Songs from "./Songs";
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import TableCell from "@material-ui/core/TableCell";
 import TableBody from "@material-ui/core/TableBody";
 import Grid from "@material-ui/core/Grid";
-
+import {Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
+import DialogContentText from '@material-ui/core/DialogContentText';
+import Button from '@material-ui/core/Button';
 const Album = ({album}) => {
-    const [expanded, setExpanded] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
 
-    function handleExpandClick() {
-        setExpanded(!expanded);
+    function handleClickOpen() {
+        setOpen(true);
     };
+
+    function handleClose(){
+        setOpen(false);
+    };
+
     //liste des songs
     let listeDesChansons = album.songs.map((m, index) => (
         <Songs song={m} key={index} id={index + 1}/>
@@ -47,7 +51,7 @@ const Album = ({album}) => {
                         </Avatar>
                     }
                     action={
-                        <IconButton aria-label="settings">
+                        <IconButton aria-label="settings" onClick={handleClickOpen}>
                             <MoreVertIcon/>
                         </IconButton>
                     }
@@ -60,10 +64,6 @@ const Album = ({album}) => {
                     title={album.title}
                 />
                 <CardContent>
-                    {/*<Typography variant="body2" color="textSecondary" component="p">
-                        This impressive paella is a perfect party dish and a fun meal to cook together with your
-                        guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                    </Typography>*/}
                     <nav className="style-scope Album-nav">
                         <a target="_blank" tabIndex="-1" alt="url Amazon" title="Amazon"
                            href={album.urlAmazon}>
@@ -99,31 +99,28 @@ const Album = ({album}) => {
                 </CardContent>
                 <CardActions disableSpacing>
                     <IconButton aria-label="add to favorites">
-                        <FavoriteIcon/>
+                        <FavoriteIcon className="Album-color-viole"/>
                     </IconButton>
                     <IconButton aria-label="share">
-                        <ShareIcon/>
-                    </IconButton>
-                    <IconButton
-                        className={clsx("Album-expand", {
-                            ["Album-expandOpen"]: expanded,
-                        })}
-                        onClick={handleExpandClick}
-                        aria-expanded={expanded}
-                        aria-label="show more"
-                    >
-                        <ExpandMoreIcon/>
+                        <ShareIcon className="Album-color-viole"/>
                     </IconButton>
                 </CardActions>
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                    <h3 className="Album-center"> Les chansons :</h3>
+            </Card>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">{"Les chansons :"}</DialogTitle>
+                <DialogContent>
                     <TableContainer component={Paper}>
                         <Table size="small">
                             <TableBody className="Album-center">{listeDesChansons}</TableBody>
                         </Table>
                     </TableContainer>
-                </Collapse>
-            </Card>
+                </DialogContent>
+            </Dialog>
         </Grid>
     );
 
