@@ -1,0 +1,21 @@
+.Song-root{
+    display: flex;
+}
+.Song-details {
+    display: flex;
+    flex-direction: column;
+}
+.Song-content {
+    flex: 1 0 auto;
+}
+.Song-cover {
+    width: 151px;
+}
+.Song-controls {
+    display: flex;
+    align-items: center;
+}
+.Song-playIcon {
+    height: 38px;
+    width: 38px
+}

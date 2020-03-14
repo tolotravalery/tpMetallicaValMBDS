@@ -6,7 +6,6 @@ import Grid from '@material-ui/core/Grid';
 const InfoGroupeRock = ({ groupeRock }) => (
     <div className="InfoGroupeRock-root">
         <Grid container spacing={3}>
-
             <Grid item xs={12} sm={6} className="InfoGroupeRock-inline-right">
                 <p>Birthdate : <span className="InfoGroupeRock-p-span">{groupeRock.lifeSpan.begin}</span></p>
                 <p>Location : <span className="InfoGroupeRock-p-span">{groupeRock.locationInfo.join(" - ")}</span></p>

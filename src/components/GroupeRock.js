@@ -19,12 +19,19 @@ import "./GroupeRock.css";
 import metallica from "../data/mettalica";
 import MembreGroupeRock from "./MembreGroupeRock";
 import InfoGroupeRock from "./InfoGroupeRock";
+import Album from "./Album";
 
 const GroupeRock = () => {
     //Liste des membres de groupes
     let listeDesMembres = metallica.members.map((m, index) => (
         <MembreGroupeRock membre={m} key={index}/>
     ));
+
+    //liste des albums
+    let listeDesAlbums = metallica.albums.map((m, index) => (
+        <Album album={m} key={index}/>
+    ));
+
     // Liste header table membre
     let headerMembres=[
         "","Nom","Date de naissance","Instruments","Année dans le groupe"
@@ -104,14 +111,12 @@ const GroupeRock = () => {
                 </TableContainer>
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Item Three
+                <h2>Les albums :</h2>
+                <Grid container spacing={3}>
+                    {listeDesAlbums}
+                </Grid>
             </TabPanel>
         </div>
-        /*<div className="GroupeRock-principal">
-
-
-
-        </div>*/
 
     );
 };
