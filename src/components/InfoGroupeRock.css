@@ -9,3 +9,9 @@ h1{
 .InfoGroupeRock-text-justify{
     text-align: justify;
 }
+.InfoGroupeRock-root{
+    width: 100%;
+}
+.InfoGroupeRock-color-violet{
+    background-color: #711942!important;
+}

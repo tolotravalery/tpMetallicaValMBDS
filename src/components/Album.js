@@ -42,7 +42,7 @@ const Album = ({album}) => {
         "#id","Mp3","titre",""
     ];
     return (
-        <Grid item xs={6} sm={4}>
+        <Grid item xs={6} sm={4} md={3}>
             <Card className="Album-root">
                 <CardHeader
                     avatar={
