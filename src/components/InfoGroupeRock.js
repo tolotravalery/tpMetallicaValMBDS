@@ -18,9 +18,10 @@ import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import StarsIcon from '@material-ui/icons/Stars';
 import StarIcon from '@material-ui/icons/Star';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import UrlIcon from "./UrlIcon";
 
 
-const InfoGroupeRock = ({ groupeRock }) => (
+const InfoGroupeRock = ({groupeRock}) => (
     <Grid container spacing={3}>
 
         <Grid item xs={12} sm={6} className="InfoGroupeRock-inline-right">
@@ -31,64 +32,65 @@ const InfoGroupeRock = ({ groupeRock }) => (
                             <TodayIcon/>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Birthdate" secondary={groupeRock.lifeSpan.begin} />
+                    <ListItemText primary="Birthdate" secondary={groupeRock.lifeSpan.begin}/>
                 </ListItem>
-                <Divider variant="inset" component="li" />
+                <Divider variant="inset" component="li"/>
                 <ListItem>
                     <ListItemAvatar>
                         <Avatar className="InfoGroupeRock-color-violet">
-                            <LocationOnIcon />
+                            <LocationOnIcon/>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Location" secondary={groupeRock.locationInfo.join(" - ")} />
+                    <ListItemText primary="Location" secondary={groupeRock.locationInfo.join(" - ")}/>
                 </ListItem>
-                <Divider variant="inset" component="li" />
+                <Divider variant="inset" component="li"/>
                 <ListItem>
                     <ListItemAvatar>
                         <Avatar className="InfoGroupeRock-color-violet">
-                            <LibraryMusicIcon />
+                            <LibraryMusicIcon/>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Genre" secondary={groupeRock.genres.join(" - ")} />
+                    <ListItemText primary="Genre" secondary={groupeRock.genres.join(" - ")}/>
                 </ListItem>
-                <Divider variant="inset" component="li" />
+                <Divider variant="inset" component="li"/>
                 <ListItem>
                     <ListItemAvatar>
                         <Avatar className="InfoGroupeRock-color-violet">
-                            <StarsIcon />
+                            <StarsIcon/>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Label" secondary={groupeRock.labels.join(" - ")} />
+                    <ListItemText primary="Label" secondary={groupeRock.labels.join(" - ")}/>
                 </ListItem>
-                <Divider variant="inset" component="li" />
+                <Divider variant="inset" component="li"/>
                 <ListItem>
                     <ListItemAvatar>
                         <Avatar className="InfoGroupeRock-color-violet">
-                            <StarIcon />
+                            <StarIcon/>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Label (DBpedia)" secondary={groupeRock.recordLabel.join(" - ")} />
+                    <ListItemText primary="Label (DBpedia)" secondary={groupeRock.recordLabel.join(" - ")}/>
                 </ListItem>
-                <Divider variant="inset" component="li" />
+                <Divider variant="inset" component="li"/>
                 <ListItem>
                     <ListItemAvatar>
                         <Avatar className="InfoGroupeRock-color-violet">
-                            <FavoriteBorderIcon />
+                            <FavoriteBorderIcon/>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Number of Deezer fans" secondary={groupeRock.deezerFans} />
+                    <ListItemText primary="Number of Deezer fans" secondary={groupeRock.deezerFans}/>
                 </ListItem>
-                <Divider variant="inset" component="li" />
+                <Divider variant="inset" component="li"/>
             </List>
         </Grid>
         <Grid item xs={12} sm={6}>
+            <UrlIcon object={groupeRock}/>
             <ExpansionPanel>
                 <ExpansionPanelSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={<ExpandMoreIcon/>}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                <span className="InfoGroupeRock-description">Description</span>
+                    <span className="InfoGroupeRock-description">Description</span>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                     <Typography className="InfoGroupeRock-text-justify">
