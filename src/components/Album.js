@@ -25,6 +25,9 @@ import Grid from "@material-ui/core/Grid";
 import {Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
 import DialogContentText from '@material-ui/core/DialogContentText';
 import Button from '@material-ui/core/Button';
+import TableRow from "@material-ui/core/TableRow";
+import TableCell from "@material-ui/core/TableCell";
+import TableHead from "@material-ui/core/TableHead";
 const Album = ({album}) => {
     const [open, setOpen] = React.useState(false);
 
@@ -41,6 +44,10 @@ const Album = ({album}) => {
         <Songs song={m} key={index} id={index + 1}/>
     ));
 
+    // Liste header table songs
+    let headerTableaux=[
+        "","#id","titre",""
+    ];
     return (
         <Grid item xs={6} sm={4}>
             <Card className="Album-root">
@@ -117,6 +124,13 @@ const Album = ({album}) => {
                 <DialogContent>
                     <TableContainer component={Paper}>
                         <Table size="small">
+                            <TableHead>
+                                <TableRow>
+                                    {headerTableaux.map((x) =>
+                                        <TableCell>{x}</TableCell>
+                                    )}
+                                </TableRow>
+                            </TableHead>
                             <TableBody className="Album-center">{listeDesChansons}</TableBody>
                         </Table>
                     </TableContainer>

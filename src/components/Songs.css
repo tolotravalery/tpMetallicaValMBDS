@@ -19,3 +19,27 @@
     height: 38px;
     width: 38px
 }
+.Songs-nav{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.Songs-icon-link{
+    width: 35px;
+    height: 35px;
+    font-size: 0;
+    padding: 10px;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    z-index: 0;
+    line-height: 1;
+    box-sizing: border-box !important;
+}
