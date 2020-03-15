@@ -6,12 +6,20 @@ h1{
 .InfoGroupeRock-text-left{
     text-align: left;
 }
-.InfoGroupeRock-text-justify{
-    text-align: justify;
+.InfoGroupeRock-description{
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+
 }
 .InfoGroupeRock-root{
     width: 100%;
 }
 .InfoGroupeRock-color-violet{
     background-color: #711942!important;
+}
+.InfoGroupeRock-text-justify{
+    text-align: justify;
 }
