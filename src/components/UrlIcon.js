@@ -38,7 +38,7 @@ const UrlIcon = ({ object }) => {
                 <img draggable="false" src="/img/spotify_icon.svg" className="UrlIcon-icon-link"/>
             </a>
             <a target="_blank" tabIndex="-1" alt="url YouTube" title="Spotify" href={object.urlYouTube}>
-                <img draggable="false" src="/img/youTube_icon.svg" className="UrlIcon-icon-link"/>
+                <img draggable="false" src="/img/youtube_icon.svg" className="UrlIcon-icon-link"/>
             </a>
         </nav>
 
