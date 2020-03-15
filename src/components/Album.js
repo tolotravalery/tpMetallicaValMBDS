@@ -1,33 +1,26 @@
 import React from 'react';
-import {makeStyles} from '@material-ui/core/styles';
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import "./Album.css";
-
-import Songs from "./Songs";
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import Grid from "@material-ui/core/Grid";
 import {Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
-import DialogContentText from '@material-ui/core/DialogContentText';
-import Button from '@material-ui/core/Button';
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
+import "./Album.css";
+import Songs from "./Songs";
+
 const Album = ({album}) => {
     const [open, setOpen] = React.useState(false);
 
@@ -46,7 +39,7 @@ const Album = ({album}) => {
 
     // Liste header table songs
     let headerTableaux=[
-        "","#id","titre",""
+        "#id","Mp3","titre",""
     ];
     return (
         <Grid item xs={6} sm={4}>
@@ -118,7 +111,7 @@ const Album = ({album}) => {
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
-                className="Album-popup"
+                maxWidth="500px"
             >
                 <DialogTitle id="alert-dialog-title">{"Les chansons :"}</DialogTitle>
                 <DialogContent>

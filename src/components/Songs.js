@@ -1,27 +1,54 @@
 import React from 'react';
-import { useTheme } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
 import TableCell from "@material-ui/core/TableCell";
-import Avatar from "@material-ui/core/Avatar";
 import TableRow from "@material-ui/core/TableRow";
 import "./Songs.css";
+import { ThemeProvider } from '@material-ui/styles';
+import AudioPlayer from 'material-ui-audio-player';
+import { createMuiTheme } from '@material-ui/core';
+import {makeStyles} from "@material-ui/core/styles";
 const Songs = ({ song,id }) => {
-    const theme = useTheme();
+    const muiTheme = createMuiTheme({});
+    const useStyles = makeStyles(theme => {
+        return {
+            root: {
+                [theme.breakpoints.down('sm')]: {
+                    width: '100%'
+                }
+            },
+            playIcon: {
+                color: '#872552',
+                '&:hover': {
+                    color: '#711942'
+                }
+            },
+            mainSlider: {
+                color: '#3f51b5',
+                '& .MuiSlider-rail': {
+                    color: '#7986cb'
+                },
+                '& .MuiSlider-track': {
+                    color: '#3f51b5'
+                },
+                '& .MuiSlider-thumb': {
+                    color: '#303f9f'
+                }
+            }
+        };
+    });
     return (
         <TableRow>
             <TableCell component="th" scope="row">
-                <IconButton aria-label="play/pause">
-                    <PlayArrowIcon className="Song-playIcon" />
-                </IconButton>
+                {id}
             </TableCell>
             <TableCell component="th" scope="row">
-                {id}
+                &nbsp;<ThemeProvider theme={muiTheme}>
+                    <AudioPlayer
+                        width="300px"
+                        src={song.preview}
+                        useStyles={useStyles}
+                        loop={false}
+                    />
+                </ThemeProvider>&nbsp;
             </TableCell>
             <TableCell component="th" scope="row">
                 {song.title}
@@ -51,47 +78,6 @@ const Songs = ({ song,id }) => {
                 </nav>
             </TableCell>
         </TableRow>
-
-
-        /*<Card className="Song-root">
-            <div className="Song-details">
-                <CardContent className="Song-content">
-                    <Typography component="p" variant="p">
-                        {id} - {song.title}
-                    </Typography>
-                </CardContent>
-                <div className="Song-controls">
-                    <IconButton aria-label="previous">
-                        {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                        <PlayArrowIcon className="Song-playIcon" />
-                    </IconButton>
-                    <IconButton aria-label="next">
-                        {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-                    </IconButton>
-                </div>
-            </div>
-        </Card>*//*<Card className="Song-root">
-            <div className="Song-details">
-                <CardContent className="Song-content">
-                    <Typography component="p" variant="p">
-                        {id} - {song.title}
-                    </Typography>
-                </CardContent>
-                <div className="Song-controls">
-                    <IconButton aria-label="previous">
-                        {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
-                    </IconButton>
-                    <IconButton aria-label="play/pause">
-                        <PlayArrowIcon className="Song-playIcon" />
-                    </IconButton>
-                    <IconButton aria-label="next">
-                        {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
-                    </IconButton>
-                </div>
-            </div>
-        </Card>*/
 
     );
 
