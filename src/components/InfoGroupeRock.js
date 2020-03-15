@@ -6,12 +6,14 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+import Divider from '@material-ui/core/Divider';
 import TodayIcon from '@material-ui/icons/Today';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import StarsIcon from '@material-ui/icons/Stars';
 import StarIcon from '@material-ui/icons/Star';
-import Divider from '@material-ui/core/Divider';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+
 
 const InfoGroupeRock = ({ groupeRock }) => (
     <Grid container spacing={3}>
@@ -61,6 +63,15 @@ const InfoGroupeRock = ({ groupeRock }) => (
                         </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Label (DBpedia)" secondary={groupeRock.recordLabel.join(" - ")} />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+                <ListItem>
+                    <ListItemAvatar>
+                        <Avatar className="InfoGroupeRock-color-violet">
+                            <FavoriteBorderIcon />
+                        </Avatar>
+                    </ListItemAvatar>
+                    <ListItemText primary="Number of Deezer fans" secondary={groupeRock.deezerFans} />
                 </ListItem>
                 <Divider variant="inset" component="li" />
             </List>
