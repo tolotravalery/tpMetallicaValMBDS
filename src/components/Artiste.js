@@ -22,9 +22,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableBody from "@material-ui/core/TableBody";
 import Loading from "./Loading";
 
-/*
-* Tsy fapiasa ao anaty class ni useState : Hooks
-* */
+
 class Artiste extends React.Component {
     state = {
         artistes: [],
