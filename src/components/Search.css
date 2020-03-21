@@ -37,3 +37,10 @@
 .Search-bar{
     background-color: #711942!important;
 }
+.Search-reponse-none{
+    display: none;
+}
+.Search-reponse-block{
+    display: block;
+    text-align: center;
+}

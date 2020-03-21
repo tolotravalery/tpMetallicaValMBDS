@@ -9,10 +9,12 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import axios from 'axios';
+import MembreGroupeRock from "./MembreGroupeRock";
 
 class Search extends React.Component {
     state = {
-        reponse: []
+        reponse: [],
+        changed: false
     };
     query = ''
 
@@ -28,14 +30,25 @@ class Search extends React.Component {
         let url = "https://wasabi.i3s.unice.fr/search/fulltext/" + query;
         axios.get(url)
         .then(response => {
-            console.log("asa="+response)
             this.setState({
                 ...this.state,
-                reponse: response.data
+                reponse: response.data,
+                changed: true
             });
         })
+
     };
     render() {
+        let classNameReponse = this.state.changed ? 'Search-reponse-block' : 'Search-reponse-none';
+        const {reponse} = this.state;
+        let list = reponse.map((r, index) => {
+            return (
+                <p>{r.name}</p>
+            );
+
+            // return <PhotoDetail desc={el}/>
+        });
+
         return (
             <div className="Search-grow">
                 <AppBar position="static" className="Search-bar">
@@ -76,6 +89,11 @@ class Search extends React.Component {
                         </div>
                     </Toolbar>
                 </AppBar>
+                <div className={classNameReponse}>
+                    <h3>Test</h3>
+                    {list}
+                </div>
+
             </div>
         );
     }
