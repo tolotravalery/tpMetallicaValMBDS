@@ -141,11 +141,11 @@ class Artiste extends React.Component {
             <div>
                 <Grid container spacing={3}>
                     <Grid item xs={12} style={{backgroundImage: `url(${this.state.artistes.picture.xl})`}}
-                          className="GroupeRock-groupe">
-                        <div className="GroupeRock-name"><h1>{this.state.artistes.name}</h1></div>
+                          className="Artiste-groupe">
+                        <div className="Artiste-name"><h1>{this.state.artistes.name}</h1></div>
                     </Grid>
                 </Grid>
-                <AppBar position="static" className="GroupeRock-principal">
+                <AppBar position="static" className="Artiste-principal">
                     <Tabs value={value} onChange={this.handleChange} aria-label="simple tabs example">
                         <Tab label="Information" {...a11yProps(0)} />
                         <Tab label="Membres" {...a11yProps(1)} />
