@@ -1,0 +1,22 @@
+h2 {
+    text-align: left;
+    color: #711942;
+}
+
+.Artiste-principal {
+    background-color: #872552 !important;
+}
+
+.Artiste-name {
+    background-color: rgb(135, 37, 82);
+    color: white;
+    padding: 10px 0;
+}
+
+.Artiste-groupe {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 500px;
+    padding: 0 !important;
+}

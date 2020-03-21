@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import "./GroupeRock.css";
+import "./Artiste.css";
 
 
 import MembreGroupeRock from "./MembreGroupeRock";
