@@ -7,6 +7,7 @@ import Photos from "./components/Photos";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import TestMaterialUI from "./components/TestMaterialUI";
 import GroupeRock from "./components/GroupeRock";
+import Artiste from "./components/Artiste";
 
 function App() {
   let nom = "Hello Madagascar";
@@ -22,7 +23,7 @@ function App() {
         <Link to="/photos">Photos</Link>
         &nbsp;
         <Link to="/username">Username</Link>*/}
-        <Route exact path="/" component={GroupeRock}></Route>
+        <Route exact path="/:artiste" component={Artiste}></Route>
         <Route path="/ui" component={TestMaterialUI}></Route>
         <Route path="/photos/:id" component={Photos}></Route>
         <Route

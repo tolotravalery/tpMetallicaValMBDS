@@ -14,7 +14,7 @@ import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import Grid from "@material-ui/core/Grid";
-import {Dialog, DialogActions, DialogContent, DialogTitle} from "@material-ui/core";
+import {Dialog, DialogContent, DialogTitle} from "@material-ui/core";
 import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
@@ -26,11 +26,11 @@ const Album = ({album}) => {
 
     function handleClickOpen() {
         setOpen(true);
-    };
+    }
 
-    function handleClose(){
+    function handleClose() {
         setOpen(false);
-    };
+    }
 
     //liste des songs
     let listeDesChansons = album.songs.map((m, index) => (
@@ -38,8 +38,8 @@ const Album = ({album}) => {
     ));
 
     // Liste header table songs
-    let headerTableaux=[
-        "#id","Mp3","titre",""
+    let headerTableaux = [
+        "#id", "Mp3", "titre", ""
     ];
     return (
         <Grid item xs={6} sm={4} md={3}>
@@ -68,32 +68,32 @@ const Album = ({album}) => {
                         <a target="_blank" tabIndex="-1" alt="url Amazon" title="Amazon"
                            href={album.urlAmazon}>
                             <img draggable="false" src="/img/amazon_icon.svg"
-                                 className="Album-icon-link"  />
+                                 className="Album-icon-link"/>
                         </a>
                         <a target="_blank" tabIndex="-1" alt="url Itunes" title="Itunes"
                            href={album.urlITunes}>
                             <img draggable="false" src="/img/itunes_icon.svg"
-                                 className="Album-icon-link"  />
+                                 className="Album-icon-link"/>
                         </a>
                         <a target="_blank" tabIndex="-1" alt="url Allmusic" title="Allmusic"
                            href={album.urlAllmusic}>
                             <img draggable="false" src="/img/allmusic_icon.svg"
-                                 className="Album-icon-link"  />
+                                 className="Album-icon-link"/>
                         </a>
                         <a target="_blank" tabIndex="-1" alt="url Discogs" title="Discogs"
                            href={album.urlDiscogs}>
                             <img draggable="false" src="/img/discogs_icon.svg"
-                                 className="Album-icon-link"  />
+                                 className="Album-icon-link"/>
                         </a>
                         <a target="_blank" tabIndex="-1" alt="url MusicBrainz" title="MusicBrainz"
                            href={album.urlMusicBrainz}>
                             <img draggable="false" src="/img/musicbrainz_icon.svg"
-                                 className="Album-icon-link"  />
+                                 className="Album-icon-link"/>
                         </a>
                         <a target="_blank" tabIndex="-1" alt="url Spotify" title="Spotify"
                            href={album.urlSpotify}>
                             <img draggable="false" src="/img/spotify_icon.svg"
-                                 className="Album-icon-link"  />
+                                 className="Album-icon-link"/>
                         </a>
                     </nav>
                 </CardContent>

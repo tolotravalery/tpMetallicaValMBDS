@@ -7,7 +7,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -33,11 +33,12 @@ const GroupeRock = () => {
     ));
 
     // Liste header table membre
-    let headerMembres=[
-        "","Nom","Date de naissance","Instruments","Année dans le groupe"
+    let headerMembres = [
+        "", "Nom", "Date de naissance", "Instruments", "Années d'activités"
     ];
+
     function TabPanel(props) {
-        const { children, value, index, ...other } = props;
+        const {children, value, index, ...other} = props;
 
         return (
             <Typography
@@ -52,17 +53,20 @@ const GroupeRock = () => {
             </Typography>
         );
     }
+
     TabPanel.propTypes = {
         children: PropTypes.node,
         index: PropTypes.any.isRequired,
         value: PropTypes.any.isRequired,
     };
+
     function a11yProps(index) {
         return {
             id: `simple-tab-${index}`,
             'aria-controls': `simple-tabpanel-${index}`,
         };
     }
+
     const useStyles = makeStyles(theme => ({
         root: {
             flexGrow: 1,
@@ -71,17 +75,19 @@ const GroupeRock = () => {
     }));
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
-    const handleChange = (event, newValue) => {
+
+    function handleChange(event, newValue) {
         setValue(newValue);
-    };
-    
+    }
+
     function handleSort(columnName) {
         console.log("ato")
     }
+
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
-                <Grid item xs={12} style={{ backgroundImage: `url(${metallica.picture.xl})`  }} className="GroupeRock-groupe">
+                <Grid item xs={12} style={{backgroundImage: `url(${metallica.picture.xl})`}} className="GroupeRock-groupe">
                     <div className="GroupeRock-name"><h1>{metallica.name}</h1></div>
                 </Grid>
             </Grid>

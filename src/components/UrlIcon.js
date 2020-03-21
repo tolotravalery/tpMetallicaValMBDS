@@ -1,7 +1,7 @@
 import React from 'react';
 import "./UrlIcon.css";
 
-const UrlIcon = ({ object }) => {
+const UrlIcon = ({object}) => {
     return (
         <nav className="style-scope UrlIcon-nav">
             <a target="_blank" tabIndex="-1" alt="url Wikipedia" title="Amazon" href={object.urlWikipedia}>

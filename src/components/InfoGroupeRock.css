@@ -1,12 +1,14 @@
-h1{
+h1 {
     font-size: 50px;
     text-align: center;
     margin: 0;
 }
-.InfoGroupeRock-text-left{
+
+.InfoGroupeRock-text-left {
     text-align: left;
 }
-.InfoGroupeRock-description{
+
+.InfoGroupeRock-description {
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -14,12 +16,15 @@ h1{
     letter-spacing: 0.00938em;
 
 }
-.InfoGroupeRock-root{
+
+.InfoGroupeRock-root {
     width: 100%;
 }
-.InfoGroupeRock-color-violet{
-    background-color: #711942!important;
+
+.InfoGroupeRock-color-violet {
+    background-color: #711942 !important;
 }
-.InfoGroupeRock-text-justify{
+
+.InfoGroupeRock-text-justify {
     text-align: justify;
 }

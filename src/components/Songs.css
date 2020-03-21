@@ -1,10 +1,11 @@
-.Songs-nav{
+.Songs-nav {
     background: #fff;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.Songs-icon-link{
+
+.Songs-icon-link {
     width: 35px;
     height: 35px;
     font-size: 0;
@@ -12,7 +13,7 @@
     display: inline-block;
     position: relative;
     outline: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -22,7 +23,8 @@
     line-height: 1;
     box-sizing: border-box !important;
 }
-.Songs-audio{
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0), 0px 1px 1px 0px rgba(0, 0, 0, 0), 0px 1px 4px 0px rgba(0,0,0,0.12);
+
+.Songs-audio {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0), 0px 1px 1px 0px rgba(0, 0, 0, 0), 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
     margin-top: 15px;
 }
