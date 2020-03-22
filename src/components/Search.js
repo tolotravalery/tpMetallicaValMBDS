@@ -9,8 +9,13 @@ import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import axios from 'axios';
-import MembreGroupeRock from "./MembreGroupeRock";
-
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+import Avatar from '@material-ui/core/Avatar';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import Artiste from "./Artiste";
 class Search extends React.Component {
     state = {
         reponse: [],
@@ -20,33 +25,45 @@ class Search extends React.Component {
 
     constructor(props) {
         super(props);
-
     }
-
 
     handleOnInputChange = (event) => {
         const query = event.target.value;
-        console.log(query)
-        let url = "https://wasabi.i3s.unice.fr/search/fulltext/" + query;
-        axios.get(url)
-        .then(response => {
+        if(query != ''){
+            console.log(query)
+            let url = "https://wasabi.i3s.unice.fr/search/fulltext/" + query;
+            axios.get(url)
+                .then(response => {
+                    this.setState({
+                        ...this.state,
+                        reponse: response.data,
+                        changed: true
+                    });
+                })
+        }
+        else if(query == ''){
             this.setState({
-                ...this.state,
-                reponse: response.data,
-                changed: true
+                changed: false
             });
-        })
+        }
 
     };
     render() {
         let classNameReponse = this.state.changed ? 'Search-reponse-block' : 'Search-reponse-none';
-        const {reponse} = this.state;
+        const {reponse,changed} = this.state;
         let list = reponse.map((r, index) => {
             return (
-                <p>{r.name}</p>
+                <BrowserRouter>
+                    <Link to={"/"+ r.name}>
+                        <ListItem button >
+                            <Avatar alt="Remy Sharp" src={r.picture} className="Search-photo" />
+                            <ListItemText primary={r.name} />
+                        </ListItem>
+                        <Divider />
+                    </Link>
+                    <Route exact path="/:artiste" component={Artiste}></Route>
+                </BrowserRouter>
             );
-
-            // return <PhotoDetail desc={el}/>
         });
 
         return (
@@ -90,10 +107,11 @@ class Search extends React.Component {
                     </Toolbar>
                 </AppBar>
                 <div className={classNameReponse}>
-                    <h3>Test</h3>
-                    {list}
+                    <h3>Recherches associées</h3>
+                    <List component="nav" className="Search-root" aria-label="mailbox folders">
+                        {list}
+                    </List>
                 </div>
-
             </div>
         );
     }

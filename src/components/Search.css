@@ -44,3 +44,11 @@
     display: block;
     text-align: center;
 }
+.Search-root{
+    width: 100%;
+}
+.Search-photo{
+    width: 50px!important;
+    height: 50px!important;
+    margin-right: 50px!important;
+}
