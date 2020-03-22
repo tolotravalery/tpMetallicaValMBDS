@@ -54,7 +54,7 @@ class Search extends React.Component {
         let list = reponse.map((r, index) => {
             return (
                 <BrowserRouter>
-                    <Link to={"/"+ r.name}>
+                    <Link to={"/artiste/"+ r.name}>
                         <ListItem button >
                             <Avatar alt="Remy Sharp" src={r.picture} className="Search-photo" />
                             <ListItemText primary={r.name} />

@@ -18,9 +18,10 @@ function App() {
             <Search/>
 
             <BrowserRouter>
-                <Route exact path="/:artiste" component={Artiste}></Route>
+                <Route exact path="/artiste/:artiste" component={Artiste}></Route>
                 <Route path="/ui" component={TestMaterialUI}></Route>
                 <Route path="/photos/:id" component={Photos}></Route>
+                <Route path="/obligatoire" component={GroupeRock}></Route>
                 <Route
                     path="/username"
                     component={() => <Username name="Michel" age="54"/>}
