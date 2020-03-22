@@ -61,7 +61,7 @@ class Search extends React.Component {
                         </ListItem>
                         <Divider />
                     </Link>
-                    <Route exact path="/:artiste" component={Artiste}></Route>
+                    <Route exact path="/artiste/:artiste" component={Artiste}></Route>
                 </BrowserRouter>
             );
         });
