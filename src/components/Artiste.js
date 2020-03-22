@@ -138,7 +138,7 @@ class Artiste extends React.Component {
         return (
             <div>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} style={{backgroundImage: `url(${this.state.artistes.picture.xl})`}}
+                    <Grid item xs={12} style={{backgroundImage: `url(${this.state.artistes.picture?.xl})`}}
                           className="Artiste-groupe">
                         <div className="Artiste-name">
                             <Link to={"/"} className="Artiste-back">

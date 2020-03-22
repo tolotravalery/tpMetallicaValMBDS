@@ -68,7 +68,7 @@ const InfoGroupeRock = ({groupeRock}) => (
                             <StarIcon/>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Label (DBpedia)" secondary={groupeRock.recordLabel.join(" - ")}/>
+                    <ListItemText primary="Label (DBpedia)" secondary={groupeRock.recordLabel?.join(" - ")}/>
                 </ListItem>
                 <Divider variant="inset" component="li"/>
                 <ListItem>
