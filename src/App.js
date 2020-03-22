@@ -9,6 +9,7 @@ import {BrowserRouter, Route, Link} from "react-router-dom";
 import TestMaterialUI from "./components/TestMaterialUI";
 import GroupeRock from "./components/GroupeRock";
 import Artiste from "./components/Artiste";
+import Grid from "@material-ui/core/Grid";
 
 
 function App() {
@@ -27,6 +28,12 @@ function App() {
                 />
                 <Route path="/hobbies" component={ListeHobbies}/>
             </BrowserRouter>
+            <Grid className="App-center">
+                <Grid item xs={12}>
+                    <p>© Copyright HARISOAN' I TOLOTRA Valery MBDS 2020 Madagascar</p>
+                    <p>Lien <a href="https://github.com/tolotravalery/tpMetallicaValMBDS">GITHUB</a> </p>
+                </Grid>
+            </Grid>
         </div>
     );
 }
