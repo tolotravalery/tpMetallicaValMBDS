@@ -8,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -51,8 +51,8 @@ const Album = ({album}) => {
                         </Avatar>
                     }
                     action={
-                        <IconButton aria-label="settings" onClick={handleClickOpen}>
-                            <MoreVertIcon/>
+                        <IconButton aria-label="settings" onClick={handleClickOpen} className="Album-song">
+                            <LibraryMusicIcon/>
                         </IconButton>
                     }
                     title={album.title}
