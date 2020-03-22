@@ -20,3 +20,9 @@ h2 {
     height: 500px;
     padding: 0 !important;
 }
+.Artiste-back{
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    color: white!important;
+}

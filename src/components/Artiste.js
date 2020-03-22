@@ -4,8 +4,6 @@ import {makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import "./Artiste.css";
-
-
 import MembreGroupeRock from "./MembreGroupeRock";
 import Album from "./Album";
 import Grid from "@material-ui/core/Grid";
@@ -21,7 +19,9 @@ import TableRow from "@material-ui/core/TableRow";
 import TableCell from "@material-ui/core/TableCell";
 import TableBody from "@material-ui/core/TableBody";
 import Loading from "./Loading";
-
+import {Link} from "react-router-dom";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 class Artiste extends React.Component {
     state = {
@@ -53,7 +53,7 @@ class Artiste extends React.Component {
                 console.log("huhu" + reponseJavaScript);
                 this.setState({
                     ...this.state,
-                    loading:false,
+                    loading: false,
                     artistes: reponseJavaScript
                 });
             });
@@ -140,7 +140,12 @@ class Artiste extends React.Component {
                 <Grid container spacing={3}>
                     <Grid item xs={12} style={{backgroundImage: `url(${this.state.artistes.picture.xl})`}}
                           className="Artiste-groupe">
-                        <div className="Artiste-name"><h1>{this.state.artistes.name}</h1></div>
+                        <div className="Artiste-name">
+                            <Link to={"/"} className="Artiste-back">
+                                <ArrowBackIcon/>
+                            </Link>
+                            <h1> {this.state.artistes.name}</h1>
+                        </div>
                     </Grid>
                 </Grid>
                 <AppBar position="static" className="Artiste-principal">
