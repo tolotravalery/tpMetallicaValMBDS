@@ -10,12 +10,8 @@ import InputBase from "@material-ui/core/InputBase";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import axios from 'axios';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
-import Avatar from '@material-ui/core/Avatar';
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import Artiste from "./Artiste";
+import Reponse from "./Reponse";
+
 class Search extends React.Component {
     state = {
         reponse: [],
@@ -48,21 +44,13 @@ class Search extends React.Component {
         }
 
     };
+
     render() {
-        let classNameReponse = this.state.changed ? 'Search-reponse-block' : 'Search-reponse-none';
         const {reponse,changed} = this.state;
-        let list = reponse.map((r, index) => {
+        let classNameReponse = changed ? 'Search-reponse-block' : 'Search-reponse-none';
+        let listDesReponses = reponse.map((r) => {
             return (
-                <BrowserRouter>
-                    <Link to={"/artiste/"+ r.name}>
-                        <ListItem button >
-                            <Avatar alt="Remy Sharp" src={r.picture} className="Search-photo" />
-                            <ListItemText primary={r.name} />
-                        </ListItem>
-                        <Divider />
-                    </Link>
-                    <Route exact path="/artiste/:artiste" component={Artiste}></Route>
-                </BrowserRouter>
+                <Reponse reponse={r}/>
             );
         });
 
@@ -86,7 +74,7 @@ class Search extends React.Component {
                                 <SearchIcon/>
                             </div>
                             <InputBase
-                                placeholder="Search…"
+                                placeholder="Nom de l' artiste ....."
                                 classes={{
                                     input: "Search-input",
                                 }}
@@ -109,7 +97,7 @@ class Search extends React.Component {
                 <div className={classNameReponse}>
                     <h3>Recherches associées</h3>
                     <List component="nav" className="Search-root" aria-label="mailbox folders">
-                        {list}
+                        {listDesReponses}
                     </List>
                 </div>
             </div>
