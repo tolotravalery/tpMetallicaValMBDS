@@ -1,13 +1,12 @@
 import React from 'react';
 import "./Reponse.css";
-import Link from "@material-ui/core/Link";
+import {Link} from "react-router-dom";
 import ListItem from "@material-ui/core/ListItem";
 import Avatar from "@material-ui/core/Avatar";
 import ListItemText from "@material-ui/core/ListItemText";
 import Divider from "@material-ui/core/Divider";
 
 const Reponse = ({reponse}) => {
-
     return (
         <Link to={"/artiste/"+ reponse.name}>
             <ListItem button >
@@ -16,7 +15,6 @@ const Reponse = ({reponse}) => {
             </ListItem>
             <Divider />
         </Link>
-
     );
 
 };

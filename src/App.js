@@ -15,9 +15,9 @@ function App() {
 
     return (
         <div className="App-grow">
-            <Search/>
             <BrowserRouter>
-                <Route exact path="/artiste/:artiste" component={Artiste}></Route>
+                <Route exact path="/" component={Search}></Route>
+                <Route path="/artiste/:artiste" component={Artiste}></Route>
                 <Route path="/ui" component={TestMaterialUI}></Route>
                 <Route path="/photos/:id" component={Photos}></Route>
                 <Route path="/obligatoire" component={GroupeRock}></Route>
